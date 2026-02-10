@@ -1,0 +1,39 @@
+{
+    "projectdir": "/data/Studies/AFIL_paper",
+    "ignore_paths": ["code", "tmp"],
+    "bidslayout" : { 
+        "derivatives": true
+        },
+    "load_masks": {
+        "t2l": {
+            "suffix": "t2lmask",
+            "extension": "nii.gz"
+            }
+        },
+    "load_maps": {
+        "mwf": {
+            "suffix":"mwf",
+            "extension": "nii.gz"
+            },
+        "FLAIR": {
+            "suffix":"FLAIR",
+            "extension": "nii.gz"
+            },
+        "T1w": {
+            "suffix":"T1w",
+            "extension": "nii.gz"
+            },
+        "T1c": {
+            "suffix":"T1c",
+            "extension": "nii.gz"
+            }
+        },
+    "fdirs": {
+        "4dimages": "derivatives/4dimage",
+        "export_lesion_stats": "derivatives/lesion_stats",
+        "density_mask": "derivatives/density_mask",
+        "save_load_glbl_intersect": "derivatives/glbl_intersect",
+        "save_load_glblmasks": "derivatives/segmentation",
+        "save_load_fu_intersect": "derivatives/fu_intersect"
+            }
+}

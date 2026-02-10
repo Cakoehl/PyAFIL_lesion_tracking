@@ -1,0 +1,81 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+
+
+class Session {
+__init__(fname : str, session_id: str)
+fname : str
+maps : dict
+relbl_mask : np.array
+_fu_intersect : np.array
+session_id : str
+num_lbl :int
+maps : dict
+glbl_intersect(): np.array
+label_img() : class Lesion
+calc_intersection(glbl_mask : np.array)
+get_lesion(lesionid : int)
+calc_intersection_fu(fu_session_str)
+relabel_masks() : str
+add_map(modality : str,fname : str)
+}
+
+class Lesion{
+volume : int
+new : int
+session : class Session
+sus_new : int
+label : int
+_init_(session: class, label: int)
+_repr_()
+get_new_lesions(interim_label_list_fu,intersect_fu)
+get_all_descendents() : list
+get_all_ancestor() : list
+add_child(child_lesion)
+add_parent(parent_lesion)
+get_related_glabel(globl_intersect)
+get_volume(lbl_mask):int
+}
+
+class Patient{
+__init__(self, subject_id: str):
+self.sessions = []
+self.subject_id= subject_id
+get_session(self, session_id: str):
+add_session_from_file(self, fname: str, ses_id=None)
+add_session(self, session : class)
+check_masks(self)
+create_density_mask()
+calc_intersections()
+glbl_intersect_to_df()
+calc_intersections_fu()
+}
+class Project{
+__init__(config_file: str)
+config = config_file
+projectdir= None
+load_config_from_json()
+get_config_values()
+patients= dict()
+load_config_from_json()
+get_config_values()
+create_sessions( subject_id)
+patient(self, subject_id: str)
+load_all_maps(self, patient: Patient)
+
+}
+class BidsProject{
+get_config_values()
+create_sessions(self, subject_id)
+load_all_maps(self, patient)
+
+}
+Project <|- BidsProject
+
+Session "1" *-- "1..*" Lesion :contains
+
+Patient "1" *-- "1..*" Session : contains
+Project "1" --* "1..*" Patient
+
+@enduml
