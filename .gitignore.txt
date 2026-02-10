@@ -1,0 +1,9 @@
+# Ignore local Python libraries and virtual environments
+**/lib/
+**/bin/
+**/include/
+**/lib64/
+**/share/
+**/wmi_nipype_workflows/
+__pycache__/
+*.pyc
