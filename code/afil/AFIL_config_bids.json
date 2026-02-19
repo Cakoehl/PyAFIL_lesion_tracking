@@ -1,5 +1,5 @@
 {
-    "projectdir": "/data/Studies/AFIL_paper",
+    "projectdir": "/data/Studies/PyAFIL_lesion_tracking",
     "ignore_paths": ["code", "tmp"],
     "bidslayout" : { 
         "derivatives": true
