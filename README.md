@@ -1,3 +1,9 @@
+# PyAFIL lesion tracking
+
+This code facilitates the analysis of lesions that intersect spatially within a time series. A prerequisite is that the MRIs of the time-series are aligned for example in a patient template space. 
+
+The workflow of PyAFIL is illustrated in the following steps. 
+
 <img width="450" alt="PyAFIL_workflow" src="https://github.com/user-attachments/assets/85688710-4bb6-4171-a76b-eb102a5d9c6e" />
 
 ### 0) **Segmented binary lesion masks**
@@ -56,3 +62,13 @@ For each lesion, the following parameters were computed:
 - MWF (mean, median, minimum, maximum)  
 
 These outputs were exported to Excel for longitudinal statistical analysis under /derivatives/lesion_stats.
+
+## USAGE
+You can start PyAFIL via console. First check the config file and the bids route. Also bids dataset_description must be available.  
+-c ... config_file 
+-s ... bids subject_id 
+-f ... force re-run AFIL  
+
+python3 run_afil.py -c /code/afil/AFIL_config_bids.json -s DEV027 -f --> re-run a specific subject
+
+python3 run_afil.py -c /code/afil/AFIL_config_bids.json --> will run all subjects found by bids
