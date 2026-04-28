@@ -1,5 +1,5 @@
 {
-    "projectdir": "/data/Studies/PyAFIL_lesion_tracking",
+    "projectdir": "/home/jovyan",
     "ignore_paths": ["code", "tmp"],
     "bidslayout" : { 
         "derivatives": true
