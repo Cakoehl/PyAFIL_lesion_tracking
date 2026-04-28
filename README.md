@@ -69,6 +69,7 @@ You can start PyAFIL via console. First check the config file and the bids route
 -s ... bids subject_id 
 -f ... force re-run AFIL  
 
+you should run the code from the code directory
 python3 run_afil.py -c /code/afil/AFIL_config_bids.json -s DEV027 -f --> re-run a specific subject
 
 python3 run_afil.py -c /code/afil/AFIL_config_bids.json --> will run all subjects found by bids
