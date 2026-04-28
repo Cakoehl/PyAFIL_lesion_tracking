@@ -64,12 +64,18 @@ For each lesion, the following parameters were computed:
 These outputs were exported to Excel for longitudinal statistical analysis under /derivatives/lesion_stats.
 
 ## USAGE
-You can start PyAFIL via console. First check the config file and the bids route. Also bids dataset_description must be available.  
+First check the config file and the bids route. Also bids dataset_description must be available.  
 -c ... config_file 
+
 -s ... bids subject_id 
+
 -f ... force re-run AFIL  
 
-you should run the code from the code directory
-python3 run_afil.py -c /code/afil/AFIL_config_bids.json -s DEV027 -f --> re-run a specific subject
+1) open the Terminal
+2) You should run the code from the code directory. cd code 
 
-python3 run_afil.py -c /code/afil/AFIL_config_bids.json --> will run all subjects found by bids
+3) python3 run_afil.py -c /code/afil/AFIL_config_bids.json -s DEV027 -f --> re-run a specific subject
+
+   or
+
+   python3 run_afil.py -c /code/afil/AFIL_config_bids.json --> will run all subjects found by bids
