@@ -1,5 +1,5 @@
 {
-    "projectdir": "/home",
+    "projectdir": "/home/jovyan",
     "ignore_paths": ["code", "tmp"],
     "bidslayout" : { 
         "derivatives": true
