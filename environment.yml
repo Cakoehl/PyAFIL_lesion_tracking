@@ -15,4 +15,3 @@ dependencies:
   - tqdm
   - scikit-image
   - seaborn
-  - starbars
