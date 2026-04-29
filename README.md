@@ -79,3 +79,9 @@ First check the config file and the bids route. Also bids dataset_description mu
    or
 
    python3 run_afil.py -c /code/afil/AFIL_config_bids.json --> will run all subjects found by bids
+
+## DEMO
+
+Click the button below to be redirected to the executable Jupyter Notebook file PyAFIL_demo.ipynb on mybinder.
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Cakoehl/PyAFIL_lesion_tracking/HEAD?urlpath=%2Fdoc%2Ftree%2FPyAFIL_demo.ipynb)
