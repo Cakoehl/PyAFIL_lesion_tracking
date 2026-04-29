@@ -12,3 +12,5 @@ dependencies:
   - openpyxl
   - ipdb
   - pybids
+  - tqdm
+  - scikit-image
