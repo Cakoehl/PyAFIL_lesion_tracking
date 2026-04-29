@@ -1,8 +1,35 @@
 # PyAFIL lesion tracking
 
-This code facilitates the analysis of lesions that intersect spatially within a time series. A prerequisite is that the MRIs of the time-series are aligned for example in a patient template space. 
+This code facilitates the analysis of lesions that intersect spatially within a time series. A prerequisite is that the MRIs of the time-series are aligned for example in a patient template space. MRI images and lesion segmentations should be stored in BIDS format. Input and output file names as well as MRI modalities must be configured via the file AFIL_config_bids.json.
 
-The workflow of PyAFIL is illustrated in the following steps. 
+## USAGE
+First check the config file and the bids route. Also bids dataset_description must be available.  
+-c ... config_file 
+
+-s ... bids subject_id 
+
+-f ... force re-run AFIL  
+
+1) open the Terminal
+2) You should run the code from the code directory. cd code 
+
+3) python3 run_afil.py -c /code/afil/AFIL_config_bids.json -s DEV027 -f --> re-run a specific subject
+
+   or
+
+   python3 run_afil.py -c /code/afil/AFIL_config_bids.json --> will run all subjects found by bids
+
+## DEMO
+
+Click the button below to be redirected to the executable Jupyter Notebook file PyAFIL_demo.ipynb on mybinder. 
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Cakoehl/PyAFIL_lesion_tracking/HEAD?urlpath=%2Fdoc%2Ftree%2FPyAFIL_demo.ipynb)
+
+It is also possible in mybinder to open a Terminal and run PyAFIL from the code directory. 
+
+python3 run_afil.py -c /code/afil/AFIL_config_bids.json -s DEV027 -f
+
+## An overview of the PyAFIL workflow is presented in the following steps. 
 
 <img width="450" alt="PyAFIL_workflow" src="https://github.com/user-attachments/assets/85688710-4bb6-4171-a76b-eb102a5d9c6e" />
 
@@ -63,25 +90,3 @@ For each lesion, the following parameters were computed:
 
 These outputs were exported to Excel for longitudinal statistical analysis under /derivatives/lesion_stats.
 
-## USAGE
-First check the config file and the bids route. Also bids dataset_description must be available.  
--c ... config_file 
-
--s ... bids subject_id 
-
--f ... force re-run AFIL  
-
-1) open the Terminal
-2) You should run the code from the code directory. cd code 
-
-3) python3 run_afil.py -c /code/afil/AFIL_config_bids.json -s DEV027 -f --> re-run a specific subject
-
-   or
-
-   python3 run_afil.py -c /code/afil/AFIL_config_bids.json --> will run all subjects found by bids
-
-## DEMO
-
-Click the button below to be redirected to the executable Jupyter Notebook file PyAFIL_demo.ipynb on mybinder.
-
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Cakoehl/PyAFIL_lesion_tracking/HEAD?urlpath=%2Fdoc%2Ftree%2FPyAFIL_demo.ipynb)
