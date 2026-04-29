@@ -84,6 +84,7 @@ scikit-image==0.25.2
 scikit-learn==1.6.1
 scipy==1.15.2
 six==1.17.0
+starbars
 SQLAlchemy==2.0.40
 stack-data==0.6.3
 threadpoolctl==3.6.0
