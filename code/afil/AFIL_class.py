@@ -898,10 +898,13 @@ class Project:
     creates a project object
 
     """
-    def __init__(self, config_file: str):
+    def __init__(self, config_file: str, bidsroot: str = None):
         self.config = config_file
         self.projectdir = None
+        self.bidsroot = bidsroot
         self.load_config_from_json()
+        if self.bidsroot is not None:
+            self.projectdir = self.bidsroot
         self.get_config_values()
         self.patients = dict()
         self.sort= sort_func
@@ -945,8 +948,12 @@ class Project:
         with open(self.config, "r") as file:
             import json
             self.load_config = json.load(file, strict=False)
-            if self.projectdir is None:
+            # if a bidsroot is provided overwrite the default projectdir in config_file
+            if self.bidsroot is not None:
+                self.projectdir = self.bidsroot
+            else:
                 self.projectdir = self.load_config['projectdir']
+            
 
     def get_config_values(self):
 
